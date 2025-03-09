@@ -34,14 +34,14 @@ export default function ViewMilestones() {
   };
 
   const handleDelete = async (milestoneID) => {
-    console.log("Deleting milestone with ID:", milestoneID); // Debugging
+    console.log("Deleting milestone with ID:", milestoneID);
     if (window.confirm("Are you sure you want to delete this milestone?")) {
       try {
         await axios.delete(`http://localhost:8080/milestones/${milestoneID}`);
-        console.log("Milestone deleted successfully"); // Debugging
-        setMilestones(milestones.filter(m => m.milestoneID !== milestoneID));
+        console.log("Milestone deleted successfully");
+        setMilestones(milestones.filter((m) => m.milestoneID !== milestoneID));
       } catch (error) {
-        console.error("Error deleting milestone:", error); // Debugging
+        console.error("Error deleting milestone:", error);
         alert("Failed to delete milestone. Please try again.");
       }
     }
@@ -103,16 +103,17 @@ export default function ViewMilestones() {
       marginTop: "10px",
     },
     btn: {
-      backgroundColor: "rgb(209, 80, 176)",
+      backgroundColor: "rgb(209, 80, 176)", // Same color for edit & delete buttons
       color: "#ffffff",
       fontWeight: "bold",
       border: "none",
-      padding: "8px 12px",
+      padding: "10px 15px",
       borderRadius: "5px",
       cursor: "pointer",
+      width: "100px", // Increased button length
     },
     deleteBtn: {
-      backgroundColor: "red",
+      backgroundColor: "rgb(209, 80, 176)", // Same color as edit button
     },
   };
 

@@ -18,6 +18,9 @@ export default function Navbar({ currentProjectID }) {
             Milestones
           </Link>
         </li>
+        <li>
+          <Link to="/logout" className="add-project-btn">Logout</Link>
+        </li>
       </ul>
     </div>
   );
