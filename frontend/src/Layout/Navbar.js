@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import './Navbar.css';
 
 export default function Navbar({ currentProjectID }) {
@@ -19,7 +19,7 @@ export default function Navbar({ currentProjectID }) {
           </Link>
         </li>
         <li>
-          <Link to="/logout" className="add-project-btn">Logout</Link>
+          <Link to="/Login" className="add-project-btn">Logout</Link>
         </li>
       </ul>
     </div>

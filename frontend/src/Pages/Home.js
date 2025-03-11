@@ -52,9 +52,9 @@ export default function Home() {
                     <Link className="btn edit-btn" to={`/editProject/${project.projectID}`}>
                       Edit
                     </Link>
-                    <button className="btn delete-btn" onClick={() => deleteProject(project.projectID)}>
+                    <Link className="btn delete-btn" onClick={() => deleteProject(project.projectID)}>
                       Delete
-                    </button>
+                    </Link>
                     {/* Updated Link to View Milestones */}
                     <Link className="btn milestone-btn" to={`/projects/${project.projectID}/view-milestones`}>
                       View Milestone
