@@ -19,7 +19,7 @@ const ProtectedLayout = ({ isLoggedIn, currentProjectID, setIsLoggedIn }) => {
   }
   return (
     <>
-      <Navbar currentProjectID={currentProjectID} setIsLoggedIn={setIsLoggedIn} />
+      <Navbar currentProjectID={currentProjectID} fdbssetIsLoggedIn={setIsLoggedIn} />
       <Outlet />
     </>
   );
