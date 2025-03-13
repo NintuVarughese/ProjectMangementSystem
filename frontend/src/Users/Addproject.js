@@ -87,14 +87,14 @@ export default function AddProject() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="ProjectName" className="form-label">
+              <label htmlFor="projectName" className="form-label">
                 Project Name
               </label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Enter project name"
-                name="ProjectName"
+                name="projectName"
                 value={project.projectName}
                 onChange={onInputChange}
               />
