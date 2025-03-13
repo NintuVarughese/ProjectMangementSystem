@@ -25,9 +25,22 @@ export default function EditProject() {
     const fetchProject = async () => {
       try {
         const response = await axios.get(`http://localhost:8080/project/${id}`);
-        setProject(response.data);
+        console.log('Fetched project data:', response.data); // Debug
+        setProject({
+          clientName: response.data.clientName || "",
+          projectName: response.data.projectName || response.data.name || "", // Handle both cases
+          description: response.data.description || "",
+          engineeringManager: response.data.engineeringManager || "",
+          startDate: response.data.startDate || "",
+          endDate: response.data.endDate || "",
+          budget: response.data.budget || "",
+          scope: response.data.scope || "",
+          contractTypeName: response.data.contractTypeName || "",
+          phaseName: response.data.phaseName || ""
+        });
       } catch (error) {
         console.error("There was an error fetching the project!", error);
+        setError("Failed to fetch project details.");
       }
     };
 
@@ -69,6 +82,7 @@ export default function EditProject() {
       navigate("/");
     } catch (error) {
       console.error("There was an error updating the project!", error);
+      setError("Failed to update project.");
     }
   };
 
@@ -90,8 +104,8 @@ export default function EditProject() {
               <input type="text" className="form-control" name="clientName" value={project.clientName} onChange={onInputChange} />
             </div>
             <div className="mb-3">
-              <label htmlFor="projectName" className="form-label">projectName</label>
-              <input type="text" className="form-control" name="projectName" value={project.programName} onChange={onInputChange} />
+              <label htmlFor="projectName" className="form-label">Project Name</label>
+              <input type="text" className="form-control" name="projectName" value={project.projectName} onChange={onInputChange} />
             </div>
             <div className="mb-3">
               <label htmlFor="description" className="form-label">Description</label>
